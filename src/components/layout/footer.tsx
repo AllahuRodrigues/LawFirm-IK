@@ -66,7 +66,7 @@ export function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <p>Rua 1301, Bairro da Sommerschield</p>
+                  <p>Rua 1335, N.º 175, Bairro da Coop</p>
                   <p>Maputo – Moçambique</p>
                 </div>
               </div>

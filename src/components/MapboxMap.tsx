@@ -55,10 +55,10 @@ export default function MapboxMap() {
               <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border pointer-events-auto">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
-                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <div>
                       <h3 class="font-semibold text-gray-800">I.K Advogados</h3>
-                      <p class="text-xs text-gray-600">Sommerschield, Maputo</p>
+                      <p class="text-xs text-gray-600">Bairro da Coop, Maputo</p>
                     </div>
                   </div>
                   <div class="flex items-center gap-2 text-xs text-gray-500">
@@ -86,7 +86,7 @@ export default function MapboxMap() {
                   </div>
                   <div class="flex-1 min-w-0">
                     <h3 class="font-semibold text-primary text-sm mb-1">I.K Advogados</h3>
-                    <p class="text-gray-600 text-xs mb-2">Rua 1301, Bairro da Sommerschield</p>
+                    <p class="text-gray-600 text-xs mb-2">Rua 1335, N.º 175, Bairro da Coop</p>
                     <div class="flex items-center gap-3 text-xs text-gray-500">
                       <div class="flex items-center gap-1">
                         <div class="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -118,15 +118,15 @@ export default function MapboxMap() {
         setTimeout(() => {
           const mapElement = container.querySelector('#leaflet-map')
           if (mapElement && window.L) {
-            // Sommerschield, Maputo coordinates - more specific for the neighborhood
-            const sommerschieldLat = -25.9589
-            const sommerschieldLng = 32.5930
+            // Bairro da Coop, Maputo coordinates - approximate location
+            const coopLat = -25.95
+            const coopLng = 32.58
             
             // Create map
             const map = window.L.map('leaflet-map', {
               zoomControl: false,
               attributionControl: false
-            }).setView([sommerschieldLat, sommerschieldLng], 15)
+            }).setView([coopLat, coopLng], 15)
 
             // Add custom zoom control
             window.L.control.zoom({
@@ -161,7 +161,7 @@ export default function MapboxMap() {
             })
 
             // Add marker
-            const marker = window.L.marker([sommerschieldLat, sommerschieldLng], { 
+            const marker = window.L.marker([coopLat, coopLng], { 
               icon: customIcon 
             }).addTo(map)
 
@@ -169,7 +169,7 @@ export default function MapboxMap() {
             const popupContent = `
               <div class="p-3 min-w-[200px]">
                 <h3 class="font-semibold text-primary mb-2">I.K Advogados</h3>
-                <p class="text-sm text-gray-600 mb-2">Rua 1301, Bairro da Sommerschield</p>
+                <p class="text-sm text-gray-600 mb-2">Rua 1335, N.º 175, Bairro da Coop</p>
                 <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
                   <div class="w-2 h-2 bg-green-500 rounded-full"></div>
                   <span>Aberto: 08:00 - 17:00</span>
@@ -192,7 +192,7 @@ export default function MapboxMap() {
             })
 
             // Add circle to highlight area
-            window.L.circle([sommerschieldLat, sommerschieldLng], {
+            window.L.circle([coopLat, coopLng], {
               color: '#CFA94F',
               fillColor: '#CFA94F',
               fillOpacity: 0.1,
@@ -201,9 +201,9 @@ export default function MapboxMap() {
 
             // Add some nearby landmarks for context
             const landmarks = [
-              { lat: -25.9655, lng: 32.5702, name: 'Hotel Polana', color: '#ef4444' },
-              { lat: -25.9710, lng: 32.5756, name: 'Shopping Center', color: '#10b981' },
-              { lat: -25.9680, lng: 32.5740, name: 'Banco', color: '#3b82f6' }
+              { lat: -25.955, lng: 32.575, name: 'Centro Comercial', color: '#ef4444' },
+              { lat: -25.945, lng: 32.585, name: 'Mercado Local', color: '#10b981' },
+              { lat: -25.948, lng: 32.582, name: 'Banco', color: '#3b82f6' }
             ]
 
             landmarks.forEach(landmark => {
@@ -225,7 +225,7 @@ export default function MapboxMap() {
 
             // Smooth zoom to marker on load
             setTimeout(() => {
-              map.setView([sommerschieldLat, sommerschieldLng], 16, { animate: true })
+              map.setView([coopLat, coopLng], 16, { animate: true })
             }, 1000)
           }
         }, 100)

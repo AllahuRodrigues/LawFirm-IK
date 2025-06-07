@@ -157,19 +157,19 @@ export default function RootLayout({
               "url": "https://ikadvogados.co.mz",
               "logo": "https://ikadvogados.co.mz/images/logo-white.png",
               "image": "https://ikadvogados.co.mz/images/logo-white.png",
-              "telephone": "+258-84-000-0000",
+              "telephone": "+258-845775185",
               "email": "ibrakante@ikadvogados.co.mz",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Rua 1301, Bairro da Sommerschield",
+                "streetAddress": "Rua 1335, N.º 175, Bairro da Coop",
                 "addressLocality": "Maputo",
                 "addressCountry": "MZ",
                 "postalCode": "1100"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": -25.9589,
-                "longitude": 32.5930
+                "latitude": -25.95,
+                "longitude": 32.58
               },
               "openingHours": "Mo-Fr 08:00-17:00",
               "priceRange": "$$",
@@ -226,11 +226,11 @@ export default function RootLayout({
               "alternateName": "IK Advogados",
               "description": "Escritório de advocacia em Maputo, Moçambique",
               "url": "https://ikadvogados.co.mz",
-              "telephone": "+258-84-000-0000",
+              "telephone": "+258-845775185",
               "email": "ibrakante@ikadvogados.co.mz",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Rua 1301, Bairro da Sommerschield",
+                "streetAddress": "Rua 1335, N.º 175, Bairro da Coop",
                 "addressLocality": "Maputo",
                 "addressRegion": "Maputo",
                 "postalCode": "1100",
@@ -238,8 +238,8 @@ export default function RootLayout({
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": -25.9589,
-                "longitude": 32.5930
+                "latitude": -25.95,
+                "longitude": 32.58
               },
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",

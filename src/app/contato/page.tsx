@@ -1,69 +1,22 @@
 'use client'
 
 import { useState } from 'react'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 
 // Dynamically import MapboxGL component to avoid SSR issues
-const MapboxMap = dynamic(() => import('../../components/MapboxMap'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
-      <div className="text-gray-500">Carregando mapa...</div>
-    </div>
-  )
-})
-
-const contactInfo = [
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    title: "Localização",
-    details: [
-      "Rua 1301, Bairro da Sommerschield",
-      "Cidade de Maputo, Moçambique"
-    ]
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: "Email",
-    details: [
-      "ibrakante@ikadvogados.co.mz",
-      "geral@ikadvogados.co.mz"
-    ]
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    ),
-    title: "Telefone",
-    details: [
-      "+258 84 123 4567",
-      "+258 21 123 456"
-    ]
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Horário",
-    details: [
-      "Segunda - Sexta: 08:00 - 17:00",
-      "Sábado: 09:00 - 13:00"
-    ]
-  }
-]
+// const MapboxMap = dynamic(() => import('../../components/MapboxMap'), {
+//   ssr: false,
+//   loading: () => (
+//     <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
+//       <div className="text-gray-500">Carregando mapa...</div>
+//     </div>
+//   )
+// })
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -74,12 +27,12 @@ export default function ContactPage() {
     message: '',
     service: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  // const [isSubmitting, setIsSubmitting] = useState(false)
+  // const [submitStatus, setSubmitStatus] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
+    // setIsSubmitting(true)
     
     try {
       // Create mailto link for immediate email sending
@@ -122,7 +75,7 @@ Data: ${new Date().toLocaleString('pt-PT')}
         console.log('API not available, using mailto fallback')
       }
       
-      setSubmitStatus('success')
+      // setSubmitStatus('success')
       setFormData({
         name: '',
         email: '',
@@ -134,7 +87,7 @@ Data: ${new Date().toLocaleString('pt-PT')}
     } catch (error) {
       console.error('Error sending email:', error)
       // Still show success since mailto was opened
-      setSubmitStatus('success')
+      // setSubmitStatus('success')
       setFormData({
         name: '',
         email: '',
@@ -144,7 +97,7 @@ Data: ${new Date().toLocaleString('pt-PT')}
         service: ''
       })
     } finally {
-      setIsSubmitting(false)
+      // setIsSubmitting(false)
     }
   }
 
@@ -201,251 +154,175 @@ Data: ${new Date().toLocaleString('pt-PT')}
         </div>
       </section>
 
-      {/* Contact Info Section */}
+      {/* Contact Information */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
-              <div 
-                key={index}
-                className="group text-center p-6 bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl border border-primary/10 hover:border-primary/30 transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {info.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-primary mb-3">
-                  {info.title}
-                </h3>
-                {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-gray-600 text-sm leading-relaxed">
-                    {detail}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form & Map Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Formulário de Contacto</span>
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Envie a Sua Mensagem
-              </h2>
-              
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Preencha o formulário abaixo e entraremos em contacto consigo no prazo de 24 horas. 
-                Todas as comunicações são tratadas com absoluta confidencialidade.
-              </p>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Nome Completo *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                      placeholder="O seu nome completo"
-                    />
+            <Card>
+              <CardHeader>
+                <CardTitle>Envie uma Mensagem</CardTitle>
+                <CardDescription>
+                  Preencha o formulário abaixo e entraremos em contato o mais breve possível
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Nome Completo</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Seu nome"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="seu@email.com"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                      placeholder="seu.email@exemplo.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Telefone
-                    </label>
-                    <input
-                      type="tel"
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Telefone</Label>
+                    <Input
                       id="phone"
                       name="phone"
+                      type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                      placeholder="+258 XX XXX XXXX"
+                      placeholder="(+258) 84 57 75 185"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      Área de Interesse
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Assunto</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                    >
-                      <option value="">Selecionar serviço</option>
-                      <option value="comercial">Direito Comercial</option>
-                      <option value="laboral">Direito Laboral</option>
-                      <option value="civil">Direito Civil</option>
-                      <option value="criminal">Direito Criminal</option>
-                      <option value="arbitragem">Arbitragem</option>
-                      <option value="consultoria">Consultoria Jurídica</option>
-                    </select>
+                      placeholder="Assunto da mensagem"
+                    />
                   </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Assunto *
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                    placeholder="Resumo do seu caso ou questão"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Mensagem *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-vertical"
-                    placeholder="Descreva detalhadamente a sua situação ou questão jurídica..."
-                  />
-                </div>
-
-                {submitStatus === 'success' && (
-                  <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-                    Mensagem enviada com sucesso! Entraremos em contacto em breve.
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Mensagem</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Descreva sua necessidade jurídica"
+                      className="min-h-[150px]"
+                    />
                   </div>
-                )}
+                  <Button className="w-full">Enviar Mensagem</Button>
+                </form>
+              </CardContent>
+            </Card>
 
-                {submitStatus === 'error' && (
-                  <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-                    Erro ao enviar mensagem. Tente novamente ou contacte-nos diretamente.
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-                      </svg>
-                      Enviando...
-                    </span>
-                  ) : (
-                    'Enviar Mensagem'
-                  )}
-                </button>
-              </form>
-            </div>
-
-            {/* Map Section */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Nossa Localização</span>
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Encontre-nos em Maputo
-              </h2>
-              
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                O nosso escritório está localizado no coração de Maputo, no prestigiado Bairro da Sommerschield. 
-                Oferecemos um ambiente profissional e acolhedor para todas as suas consultas jurídicas.
-              </p>
-
-              <div className="mb-8">
-                <MapboxMap />
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-semibold text-primary mb-4">Informações de Contacto</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 text-accent mt-1">
-                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Informações de Contato</CardTitle>
+                  <CardDescription>
+                    Estamos disponíveis para atendimento nos seguintes horários
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">Telefone</h3>
+                        <p className="text-gray-600">(+258) 84 57 75 185</p>
+                        <p className="text-gray-600">WhatsApp: (+258) 86 57 72 780</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-gray-800">Rua 1301, Bairro da Sommerschield</p>
-                      <p className="text-gray-600">Cidade de Maputo, Moçambique</p>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">Email</h3>
+                        <p className="text-gray-600">ibrakante@ikadvogados.co.mz</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">Endereço</h3>
+                        <p className="text-gray-600">
+                          Rua 1335, N.º 175<br />
+                          Bairro da Coop<br />
+                          Cidade de Maputo<br />
+                          Moçambique
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">Horário de Atendimento</h3>
+                        <div className="space-y-2 text-gray-600">
+                          <p>Segunda - Sexta: 08:00 - 17:00</p>
+                          <p>Sábado: 09:00 - 13:00</p>
+                          <p>Domingo: Fechado</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 text-accent">
-                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">ibrakante@ikadvogados.co.mz</p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Localização</CardTitle>
+                  <CardDescription>
+                    Visite nosso escritório no Bairro da Coop, Maputo
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-video rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.234567890123!2d32.58!3d-25.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU3JzAwLjAiUyAzMsKwMzQnNDguMCJF!5e0!3m2!1spt-PT!2smz!4v1640995200000"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Localização IK Advogados - Bairro da Coop"
+                    ></iframe>
                   </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 text-accent">
-                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">Segunda - Sexta: 08:00 - 17:00</p>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

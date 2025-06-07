@@ -4,8 +4,8 @@ import Image from 'next/image'
 const timeline = [
   {
     year: "2019 - Presente",
-    title: "Managing Partner",
-    company: "I.K Advogados - Sociedade Unipessoal, Lda.",
+    title: "Sócio Administrador",
+    company: "Ibraimo Kanté Advogados, S.U., Lda",
     description: "Fundação e liderança da própria firma de advocacia especializada em direito comercial, laboral, civil e criminal.",
     location: "Maputo, Moçambique"
   },
@@ -13,7 +13,7 @@ const timeline = [
     year: "2024 - Presente", 
     title: "Conselheiro Nacional",
     company: "Ordem dos Advogados de Moçambique",
-    description: "Cargo de liderança nacional na regulamentação e supervisão da advocacia em Moçambique.",
+    description: "Cargo de liderança nacional na regulamentação e supervisão da advocacia em Moçambique, com foco na área de estágio, formação profissional e IAJ – Instituto de Acesso à Justiça.",
     location: "Moçambique"
   },
   {
@@ -24,17 +24,24 @@ const timeline = [
     location: "Moçambique"
   },
   {
+    year: "2020 - 2023",
+    title: "Conselheiro Provincial",
+    company: "Conselho Provincial da Cidade de Maputo - OAM",
+    description: "Atuação na área do Acesso à Justiça e Direitos Humanos junto da Ordem dos Advogados de Moçambique.",
+    location: "Maputo, Moçambique"
+  },
+  {
     year: "2023 - 2024",
     title: "Presidente da Comissão",
     company: "Verificação de Sociedades de Advogados & Avaliação de Quotas",
-    description: "Liderança na avaliação e verificação de sociedades de advogados em Moçambique.",
+    description: "Liderança na avaliação e verificação de sociedades de advogados em Moçambique junto da Ordem dos Advogados.",
     location: "Moçambique"
   },
   {
-    year: "2011 - 2019",
-    title: "Senior Associate Lawyer",
+    year: "2009 - 2019",
+    title: "Advogado",
     company: "Zaheer Lorgat Advogados",
-    description: "8 anos de experiência em contencioso e assessoria jurídica numa das firmas mais prestigiadas de Moçambique.",
+    description: "10 anos de experiência em contencioso e assessoria jurídica numa das firmas mais prestigiadas de Moçambique, prestando serviços jurídicos em renomadas instituições bancárias, públicas e privadas.",
     location: "Maputo, Moçambique"
   }
 ]
@@ -73,11 +80,6 @@ const expertise = [
   "Consultoria Jurídica"
 ]
 
-export const metadata = {
-  title: "Sobre Nós - I.K Advogados",
-  description: "Conheça a I.K Advogados, Sociedade Unipessoal, Lda. Nossa história, missão e compromisso com a excelência jurídica em Moçambique."
-}
-
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
@@ -100,12 +102,12 @@ export default function AboutPage() {
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              Managing Partner com mais de 15 anos de experiência, Conselheiro Nacional da Ordem dos Advogados de Moçambique e Árbitro certificado.
+              Sócio Administrador com mais de 15 anos de experiência, Conselheiro Nacional da Ordem dos Advogados de Moçambique e Árbitro certificado.
             </p>
 
             <div className="flex items-center justify-center gap-8 text-primary-foreground/80">
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent">2008</div>
+                <div className="text-2xl font-bold text-accent">2009</div>
                 <div className="text-sm">Formação UEM</div>
               </div>
               <div className="w-px h-12 bg-primary-foreground/30"></div>
@@ -142,24 +144,32 @@ export default function AboutPage() {
               </h2>
               
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                O Dr. Ibraimo Kanté é o fundador e Managing Partner da I.K Advogados, uma sociedade unipessoal especializada em direito comercial, laboral e civil. Com uma carreira que se estende por mais de 15 anos, começou a sua jornada profissional em 2002.
+                O Dr. Ibraimo Kanté, de 41 anos, é o fundador e Sócio Administrador da Ibraimo Kanté Advogados, S.U., Lda, uma sociedade unipessoal especializada em direito comercial, laboral e civil. Com uma carreira que se estende por mais de 15 anos, começou a sua jornada profissional em 2009.
               </p>
               
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Formado pela prestigiada Universidade Eduardo Mondlane com especialização em Banking, Corporate, Finance, and Securities Law, o Dr. Kanté construiu uma carreira sólida baseada na excelência, integridade e compromisso com os seus clientes.
+                Formado pela prestigiada Universidade Eduardo Mondlane, o Dr. Kanté construiu uma carreira sólida baseada na excelência, integridade e compromisso com os seus clientes, atuando em diversas áreas do direito, com especial enfoque em contencioso (cível, laboral, crime, administrativo, comercial e bancário).
               </p>
 
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Antes de fundar a I.K Advogados em 2019, trabalhou durante 8 anos como Senior Associate na renomada firma Zaheer Lorgat Advogados, onde desenvolveu expertise em contencioso e assessoria jurídica complexa.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Trabalha desde 2009 nas diversas áreas do direito, tendo prestado através da firma onde esteve afecto até junho de 2019 (Zaheer Lorgat Advogados), serviços jurídicos em renomadas instituições bancárias, públicas e privadas. É Advogado inscrito na Ordem dos Advogados de Moçambique, exercendo a profissão a tempo inteiro.
               </p>
+
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-xl border border-primary/10 mb-8">
+                <h4 className="font-semibold text-primary mb-4">Contactos Profissionais</h4>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <p><strong>Telefone:</strong> (+258) 84 57 75 185 / (+258) 86 57 72 780</p>
+                  <p><strong>Email:</strong> ibrakante@ikadvogados.co.mz</p>
+                  <p><strong>Endereço:</strong> Rua 1335, N.º 175, Bairro da Coop, Cidade de Maputo</p>
+                </div>
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-xl border border-primary/10">
                   <h4 className="font-semibold text-primary mb-3">Educação</h4>
                   <div className="space-y-2 text-sm text-gray-600">
                     <p><strong>Universidade Eduardo Mondlane</strong></p>
-                    <p>Licenciatura em Direito (2008-2012)</p>
-                    <p>Banking, Corporate, Finance & Securities Law</p>
+                    <p>Licenciatura em Direito</p>
                   </div>
                 </div>
                 
@@ -216,6 +226,13 @@ export default function AboutPage() {
                   <div className="flex items-start gap-4">
                     <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <div>
+                      <p className="font-semibold">Sócio Administrador</p>
+                      <p className="text-primary-foreground/80 text-sm">Ibraimo Kanté Advogados, S.U., Lda</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
                       <p className="font-semibold">Conselheiro Nacional</p>
                       <p className="text-primary-foreground/80 text-sm">Ordem dos Advogados de Moçambique</p>
                     </div>
@@ -230,7 +247,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-4">
                     <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold">Executivo Jurídico</p>
+                      <p className="font-semibold">Membro Sénior e Assessor Jurídico</p>
                       <p className="text-primary-foreground/80 text-sm">AMEEM - Associação de Empresários Muçulmanos</p>
                     </div>
                   </div>

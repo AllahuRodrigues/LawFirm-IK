@@ -190,7 +190,7 @@ export default function AboutPage() {
                 <div className="relative w-full max-w-md mx-auto">
                   <div className="aspect-square rounded-2xl overflow-hidden border-4 border-accent/20 shadow-2xl bg-gradient-to-br from-primary/5 to-accent/5">
                     <Image
-                      src="/images/photo-ceo.jpg"
+                      src="/images/ceo1.jpg"
                       alt="Dr. Ibraimo Kanté"
                       width={400}
                       height={400}

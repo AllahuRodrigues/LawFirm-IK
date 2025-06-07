@@ -340,7 +340,7 @@ Data: ${new Date().toLocaleString('pt-PT')}
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+258841234567"
+              href="tel:+258845775185"
               className="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Ligar Agora

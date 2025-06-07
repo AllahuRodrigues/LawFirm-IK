@@ -1,103 +1,588 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
 
-export default function Home() {
+const pillars = [
+  {
+    number: "01",
+    title: "Excelência",
+    description: "Serviços com eficiência e qualidade superior, com mais de 15 anos de experiência comprovada."
+  },
+  {
+    number: "02", 
+    title: "Integridade & Ética",
+    description: "Sigilo e ética profissional, com reconhecimento da Ordem dos Advogados de Moçambique."
+  },
+  {
+    number: "03",
+    title: "Inovação",
+    description: "Soluções jurídicas modernas e personalizadas para cada necessidade dos nossos clientes."
+  }
+]
+
+const achievements = [
+  {
+    year: "2024",
+    title: "Conselheiro Nacional",
+    org: "Ordem dos Advogados de Moçambique"
+  },
+  {
+    year: "2023",
+    title: "Presidente da Comissão",
+    org: "Sociedades de Advogados & Avaliação de Quotas"
+  },
+  {
+    year: "2022",
+    title: "Árbitro Certificado",
+    org: "CACM - Centro de Arbitragem"
+  }
+]
+
+const expertise = [
+  "Direito Comercial e Bancário",
+  "Arbitragem e Mediação", 
+  "Direito Laboral",
+  "Litígios Civis",
+  "Direito Criminal",
+  "Assessoria Corporativa"
+]
+
+const partners = [
+  {
+    name: "Ordem dos Advogados de Moçambique",
+    logo: "/images/partner.jpeg"
+  },
+  {
+    name: "CACM - Centro de Arbitragem",
+    logo: "/images/partner.jpeg"
+  },
+  {
+    name: "AMEEM - Associação de Empresários",
+    logo: "/images/partner.jpeg"
+  },
+  {
+    name: "Universidade Eduardo Mondlane",
+    logo: "/images/partner.jpeg"
+  },
+  {
+    name: "Zaheer Lorgat Advogados",
+    logo: "/images/partner.jpeg"
+  }
+]
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary via-primary to-blue-900 text-primary-foreground py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-accent font-medium text-sm uppercase tracking-wider">
+                  Managing Partner
+                </span>
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Dr. Ibraimo Kanté
+                <span className="block text-accent text-2xl md:text-3xl font-medium mt-2">
+                  Advocacia de Excelência
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-4 text-primary-foreground/90">
+                15+ Anos Defendendo os Seus Direitos
+              </p>
+              
+              <p className="text-lg mb-8 text-primary-foreground/80 max-w-lg">
+                Conselheiro Nacional da Ordem dos Advogados de Moçambique. 
+                Especialista em Direito Comercial, Arbitragem e Litígios.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/agendar"
+                  className="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Agendar Consulta
+                </Link>
+                <Link
+                  href="/sobre"
+                  className="border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-all duration-300"
+                >
+                  Conhecer o Dr. Kanté
+                </Link>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="relative w-80 h-80 mx-auto">
+                {/* Background Circle */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary-foreground/10 rounded-full backdrop-blur-sm border border-primary-foreground/20"></div>
+                
+                {/* CEO Photo */}
+                <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-accent/50 shadow-2xl">
+                  <Image
+                    src="/images/ceo1.jpg"
+                    alt="Dr. Ibraimo Kanté"
+                    width={320}
+                    height={320}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+                
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-bounce"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent/60 rounded-full animate-pulse"></div>
+                
+                {/* Achievement Badge */}
+                <div className="absolute -bottom-6 -right-6 bg-white text-primary px-4 py-2 rounded-full shadow-lg">
+                  <div className="text-sm font-semibold">15+</div>
+                  <div className="text-xs">Anos</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Expertise Strip */}
+      <section className="bg-accent py-6">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap justify-center gap-6 text-accent-foreground">
+            {expertise.map((area, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-accent-foreground rounded-full"></div>
+                <span className="font-medium text-sm">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Dr. Kanté */}
+      <section className="py-20 bg-white relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Sobre o Dr. Kanté</span>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                Liderança Jurídica com Experiência Comprovada
+              </h2>
+              
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                O Dr. Ibraimo Kanté é o Managing Partner da I.K Advogados, com uma carreira distinta 
+                que começou em 2002. Formado pela prestigiada Universidade Eduardo Mondlane em 
+                Banking, Corporate, Finance, and Securities Law.
+              </p>
+              
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Atualmente serve como Conselheiro Nacional da Ordem dos Advogados de Moçambique 
+                e Árbitro certificado pelo CACM. A sua vasta experiência inclui 8 anos na 
+                renomada Zaheer Lorgat Advogados antes de fundar a sua própria firma.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-primary">Educação</h4>
+                  <p className="text-sm text-gray-600">
+                    <strong>Universidade Eduardo Mondlane</strong><br />
+                    Licenciatura em Direito (2008-2012)<br />
+                    Banking, Corporate, Finance & Securities Law
+                  </p>
+                </div>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-primary">Idiomas</h4>
+                  <p className="text-sm text-gray-600">
+                    Português (Nativo)<br />
+                    Francês (Proficiente)<br />
+                    Inglês (Proficiente)
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-xl border border-primary/10">
+                <h3 className="text-xl font-semibold text-primary mb-4">Conquistas Recentes</h3>
+                <div className="space-y-4">
+                  {achievements.map((achievement, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-accent-foreground font-bold text-sm">{achievement.year}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-primary">{achievement.title}</h4>
+                        <p className="text-gray-600 text-sm">{achievement.org}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Pillars */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Os Nossos Pilares
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Construímos a nossa prática sobre valores sólidos que garantem o melhor serviço aos nossos clientes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pillars.map((pillar) => (
+              <div 
+                key={pillar.number}
+                className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20"
+              >
+                <div className="text-accent text-5xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {pillar.number} •
+                </div>
+                <h3 className="text-xl font-semibold text-primary mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Nossos Parceiros e Associações
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Colaboramos com as principais instituições jurídicas e organizações de Moçambique.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="flex animate-scroll-horizontal gap-12 px-8">
+              {[...partners, ...partners].map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-56 h-28 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center group hover:shadow-md transition-all duration-300 px-6"
+                >
+                  <div className="relative w-full h-16 overflow-hidden rounded-lg">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={200}
+                      height={64}
+                      className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legal Column Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative">
+        <div className="absolute inset-0 bg-pattern-dots opacity-30"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-accent font-medium text-sm uppercase tracking-wider">
+                Coluna Jurídica
+              </span>
+              <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Artigos e Análises Jurídicas
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Acompanhe as análises especializadas do Dr. Ibraimo Kanté sobre temas jurídicos relevantes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Article Image */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/image.png"
+                  alt="Coluna Jurídica - Folha Imobiliária"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                  <p className="text-sm font-semibold text-primary">Folha Imobiliária</p>
+                  <p className="text-xs text-gray-600">Setembro 2024</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Article Content */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Artigo Destacado</span>
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                Finalidade da Caução nos Contratos de Arrendamento
+              </h3>
+
+              <div className="prose prose-gray max-w-none">
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  O contrato de arrendamento é aquele através do qual alguém se compromete a proporcionar a outro, o gozo (uso) temporário de um bem imóvel, mediante retribuição. A pessoa que dá o imóvel de arrendamento é designada por &ldquo;senhorio&rdquo; ou locador.
+                </p>
+
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  A pessoa que o imóvel é arrendado é designada por &ldquo;inquilino&rdquo; ou &ldquo;locatário&rdquo;. A retribuição corresponde do preço ou renda (e sendo não é obrigatório), nos contratos de arrendamento, o locatário obrigar-se a fazer um adiantamento de rendas, a título de caução.
+                </p>
+
+                <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-6">
+                  <h4 className="font-semibold text-primary mb-2">Pontos-chave do Artigo:</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Definição e aplicação da caução em contratos de arrendamento</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Proteção jurídica para senhorios e inquilinos</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Resolução de conflitos em situações de incumprimento</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Casos práticos e exemplos de aplicação</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg">
+                  <div className="w-12 h-12 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/ceo1.jpg"
+                      alt="Dr. Ibraimo Kanté"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-primary">Dr. Ibraimo Kanté</p>
+                    <p className="text-sm text-gray-600">Advogado | ibrakante@ikadvogados.co.mz</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <Link
+                  href="/servicos"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <span>Saber Mais sobre Direito Imobiliário</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* National Participation Section */}
+      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-blue-900"></div>
+        <div className="absolute inset-0 bg-pattern-grid opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Participação em Eventos Nacionais
+            </h2>
+            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+              Presença ativa do Dr. Ibraimo Kanté em eventos da Ordem dos Advogados de Moçambique e outras instituições.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <span className="text-accent font-semibold uppercase text-sm tracking-wider">Liderança Nacional</span>
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">
+                Moderador em Eventos da OAM
+              </h3>
+
+              <p className="text-primary-foreground/90 mb-6 leading-relaxed">
+                Como Conselheiro Nacional da Ordem dos Advogados de Moçambique, o Dr. Ibraimo Kanté 
+                participa regularmente como moderador em palestras e eventos sobre desenvolvimento 
+                profissional e questões de género na advocacia.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Comissão de Género - OAM</h4>
+                    <p className="text-sm text-primary-foreground/80">
+                      Ciclo de Palestras sobre Desenvolvimento Pessoal e Empreendedorismo
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Tema: Desafios e Prerrogativas dos Advogados</h4>
+                    <p className="text-sm text-primary-foreground/80">
+                      Uma Perspectiva Baseada no Género
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Moderação de Painéis</h4>
+                    <p className="text-sm text-primary-foreground/80">
+                      Dr. Dário de Souza, Dra. Amina Berta, Dr. Joaquim Pereira
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-accent/10 rounded-lg border border-accent/20">
+                <p className="text-sm text-primary-foreground/90 italic">
+                  &ldquo;Por uma Advocacia Ética, de Qualidade e Moderna, ao Serviço da Sociedade&rdquo;
+                </p>
+                <p className="text-xs text-accent mt-2">— Lema da Ordem dos Advogados de Moçambique</p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/image.png"
+                  alt="Dr. Ibraimo Kanté em evento da OAM"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                    <h4 className="font-semibold text-primary mb-2">Evento Nacional OAM</h4>
+                    <p className="text-sm text-gray-600">Dr. Ibraimo Kanté como moderador</p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded">Março 2024</span>
+                      <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded">Hotel Sena</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating achievement badges */}
+              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground p-3 rounded-full shadow-lg">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-blue-900"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Números que Falam por Si
+            </h2>
+            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+              A nossa experiência e dedicação traduzem-se em resultados concretos para os nossos clientes.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="group">
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
+              <div className="text-primary-foreground/80">Anos de Experiência</div>
+            </div>
+            <div className="group">
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="text-primary-foreground/80">Casos Resolvidos</div>
+            </div>
+            <div className="group">
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">3</div>
+              <div className="text-primary-foreground/80">Cargos de Liderança</div>
+            </div>
+            <div className="group">
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-primary-foreground/80">Compromisso</div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/agendar"
+                className="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Agendar Consulta Agora
+              </Link>
+              <Link
+                href="/contato"
+                className="border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-all duration-300"
+              >
+                Contactar-nos
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }

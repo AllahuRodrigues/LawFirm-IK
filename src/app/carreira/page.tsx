@@ -8,50 +8,43 @@ export const metadata = {
 const jobOpenings = [
   {
     id: 1,
-    title: "Advogado Júnior",
-    department: "Direito Comercial",
+    title: "Estágio Profissional para Efeitos de Ingresso na Advocacia",
+    department: "Formação Profissional",
     location: "Maputo",
-    type: "Tempo Integral",
-    posted: "2024-12-01",
-    description: "Procuramos um advogado júnior motivado para se juntar à nossa equipa de Direito Comercial.",
+    type: "Estágio Profissional",
+    posted: "2025-01-07",
+    description: "Programa de estágio profissional destinado a licenciados em Direito que pretendem ingressar na advocacia. Este estágio visa proporcionar formação prática e experiência profissional necessária para o exercício da advocacia em Moçambique, em conformidade com os requisitos da Ordem dos Advogados de Moçambique.",
     requirements: [
-      "Licenciatura em Direito",
-      "Inscrição na Ordem dos Advogados de Moçambique",
-      "1-3 anos de experiência em direito comercial",
-      "Excelentes competências de comunicação",
-      "Domínio do português e inglês"
-    ]
-  },
-  {
-    id: 2,
-    title: "Paralegal",
-    department: "Apoio Jurídico",
-    location: "Maputo",
-    type: "Tempo Integral",
-    posted: "2024-11-15",
-    description: "Oportunidade para paralegal experiente apoiar a nossa equipa jurídica.",
-    requirements: [
-      "Formação em Direito ou área relacionada",
-      "Mínimo 2 anos de experiência como paralegal",
-      "Conhecimento de procedimentos legais",
-      "Competências em pesquisa jurídica",
-      "Organização e atenção ao detalhe"
-    ]
-  },
-  {
-    id: 3,
-    title: "Estagiário de Direito",
-    department: "Várias Áreas",
-    location: "Maputo",
-    type: "Estágio",
-    posted: "2024-11-01",
-    description: "Programa de estágio para estudantes de direito em várias áreas de prática.",
-    requirements: [
-      "Estudante de Direito (últimos anos)",
-      "Média académica mínima de 14 valores",
-      "Interesse em advocacia",
-      "Disponibilidade mínima de 6 meses",
-      "Proatividade e vontade de aprender"
+      "Licenciatura em Direito por instituição reconhecida",
+      "Certificado de conclusão do curso de Direito",
+      "Disponibilidade para estágio a tempo inteiro",
+      "Excelente domínio da língua portuguesa",
+      "Conhecimentos básicos em inglês (preferencial)",
+      "Competências de investigação jurídica",
+      "Boa capacidade de redacção e comunicação",
+      "Proactividade e vontade de aprender",
+      "Interesse genuíno pela prática da advocacia",
+      "Disponibilidade para acompanhar processos em tribunal",
+      "Conhecimento básico de informática (Word, Excel, pesquisa online)"
+    ],
+    benefits: [
+      "Formação prática supervisionada por advogados experientes",
+      "Subsídio de estágio competitivo",
+      "Acompanhamento em processos reais",
+      "Formação contínua em diferentes áreas do direito",
+      "Possibilidade de contratação após conclusão do estágio",
+      "Preparação para exames da Ordem dos Advogados",
+      "Mentoria personalizada com o Ibraimo Kanté",
+      "Certificado de conclusão de estágio"
+    ],
+    documents: [
+      "Curriculum Vitae actualizado",
+      "Certificado de licenciatura em Direito",
+      "Histórico escolar completo",
+      "Carta de motivação (máximo 2 páginas)",
+      "Fotocópia do Bilhete de Identidade",
+      "Certificados de outros cursos ou formações (se aplicável)",
+      "Registo criminal (ou declaração de não existência)"
     ]
   }
 ]
@@ -67,7 +60,7 @@ export default function CareerPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Junte-se à nossa equipa de profissionais experientes e construa uma carreira de sucesso 
-            numa das firmas de advocacia mais respeitadas de Moçambique.
+            numa firma comprometida com os seus clientes.
           </p>
         </section>
 
@@ -116,7 +109,7 @@ export default function CareerPage() {
         <section className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-4">
-              Oportunidades Atuais
+              Oportunidades Actuais
             </h2>
             <p className="text-lg text-gray-600">
               Explore as nossas ofertas de emprego atuais e candidate-se à posição que melhor se adequa ao seu perfil.
@@ -126,10 +119,14 @@ export default function CareerPage() {
           <div className="space-y-6">
             {jobOpenings.map((job) => (
               <div key={job.id} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-medium">
+                      <span className={`px-2 py-1 rounded text-xs font-medium ${
+                        job.type === 'Estágio Profissional' 
+                          ? 'bg-accent text-accent-foreground' 
+                          : 'bg-primary text-primary-foreground'
+                      }`}>
                         {job.type}
                       </span>
                       <span className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">
@@ -149,19 +146,42 @@ export default function CareerPage() {
                     <div className="mb-4">
                       <h4 className="font-medium text-gray-800 mb-2">Requisitos:</h4>
                       <ul className="space-y-1">
-                        {job.requirements.slice(0, 3).map((req, idx) => (
+                        {job.requirements.map((req, idx) => (
                           <li key={idx} className="text-sm text-gray-600 flex items-start">
                             <span className="text-accent mr-2 flex-shrink-0">•</span>
                             {req}
                           </li>
                         ))}
-                        {job.requirements.length > 3 && (
-                          <li className="text-sm text-gray-500 italic">
-                            ... e mais {job.requirements.length - 3} requisitos
-                          </li>
-                        )}
                       </ul>
                     </div>
+
+                    {job.benefits && (
+                      <div className="mb-4">
+                        <h4 className="font-medium text-gray-800 mb-2">Benefícios:</h4>
+                        <ul className="space-y-1">
+                          {job.benefits.map((benefit, idx) => (
+                            <li key={idx} className="text-sm text-gray-600 flex items-start">
+                              <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {job.documents && (
+                      <div className="mb-4">
+                        <h4 className="font-medium text-gray-800 mb-2">Documentos a Enviar:</h4>
+                        <ul className="space-y-1">
+                          {job.documents.map((doc, idx) => (
+                            <li key={idx} className="text-sm text-gray-600 flex items-start">
+                              <span className="text-blue-500 mr-2 flex-shrink-0">📄</span>
+                              {doc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     <div className="text-sm text-gray-500">
                       Publicado em: {new Date(job.posted).toLocaleDateString('pt-PT')}
@@ -171,7 +191,11 @@ export default function CareerPage() {
                   <div className="lg:ml-6 mt-4 lg:mt-0">
                     <Link
                       href={`/contato?assunto=candidatura&vaga=${encodeURIComponent(job.title)}`}
-                      className="bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors inline-block"
+                      className={`px-6 py-2 rounded-md font-medium transition-colors inline-block ${
+                        job.type === 'Estágio Profissional'
+                          ? 'bg-accent text-accent-foreground hover:bg-accent/90'
+                          : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                      }`}
                     >
                       Candidatar-se
                     </Link>
@@ -196,7 +220,7 @@ export default function CareerPage() {
                 </div>
                 <h3 className="font-semibold text-primary mb-2">Candidatura</h3>
                 <p className="text-sm text-gray-600">
-                  Envie o seu CV e carta de motivação através do nosso formulário de contacto.
+                  Envie o seu CV e documentos necessários através do nosso formulário de contacto. Para estágios profissionais, consulte a lista completa de documentos exigidos.
                 </p>
               </div>
               
@@ -204,9 +228,9 @@ export default function CareerPage() {
                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-primary-foreground font-bold">2</span>
                 </div>
-                <h3 className="font-semibold text-primary mb-2">Triagem</h3>
+                <h3 className="font-semibold text-primary mb-2">Análise</h3>
                 <p className="text-sm text-gray-600">
-                  Análise do perfil e avaliação da adequação aos requisitos da posição.
+                  Análise cuidadosa do perfil e avaliação da adequação aos requisitos da posição. Para estágios, verificação dos requisitos da OAM.
                 </p>
               </div>
               
@@ -216,7 +240,7 @@ export default function CareerPage() {
                 </div>
                 <h3 className="font-semibold text-primary mb-2">Entrevista</h3>
                 <p className="text-sm text-gray-600">
-                  Entrevista presencial ou online com a nossa equipa de recursos humanos.
+                  Entrevista presencial ou online com a nossa equipa. Para estágios profissionais, inclui entrevista com o Dr. Ibraimo Kanté.
                 </p>
               </div>
               
@@ -226,7 +250,7 @@ export default function CareerPage() {
                 </div>
                 <h3 className="font-semibold text-primary mb-2">Integração</h3>
                 <p className="text-sm text-gray-600">
-                  Bem-vindo à equipa! Processo de integração e formação inicial.
+                  Bem-vindo à equipa! Processo de integração, formação inicial e definição do plano de formação personalizado.
                 </p>
               </div>
             </div>

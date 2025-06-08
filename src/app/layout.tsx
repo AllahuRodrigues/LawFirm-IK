@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     "DC.subject": "Serviços Jurídicos, Advocacia, Direito",
     "DC.description": "Escritório de advocacia em Maputo, Moçambique",
     "DC.publisher": "I.K Advogados",
-    "DC.contributor": "Dr. Ibraimo Kanté",
+    "DC.contributor": "Ibraimo Kanté",
     "DC.date": new Date().toISOString(),
     "DC.type": "website",
     "DC.format": "text/html",
@@ -186,7 +186,7 @@ export default function RootLayout({
               ],
               "founder": {
                 "@type": "Person",
-                "name": "Dr. Ibraimo Kanté"
+                "name": "Ibraimo Kanté"
               },
               "knowsAbout": [
                 "Direito Civil Moçambicano",

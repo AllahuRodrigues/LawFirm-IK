@@ -1,8 +1,8 @@
 # I.K Advogados - Website Institucional
 
-Website oficial da **I.K Advogados, Sociedade Unipessoal, Lda.**, escritório de advocacia liderado pelo Dr. Ibraimo Kanté em Maputo, Moçambique.
+Website oficial da **I.K Advogados, Sociedade Unipessoal, Lda.**, escritório de advocacia liderado pelo Ibraimo Kanté em Maputo, Moçambique.
 
-## 🏛️ Sobre o Dr. Ibraimo Kanté
+## 🏛️ Sobre o Ibraimo Kanté
 
 **Managing Partner** com mais de 15 anos de experiência no sector jurídico moçambicano.
 
@@ -32,7 +32,7 @@ Website oficial da **I.K Advogados, Sociedade Unipessoal, Lda.**, escritório de
 
 ### 📄 Páginas Implementadas
 
-1. **Home (/)** - Página inicial com apresentação do Dr. Kanté
+1. **Home (/)** - Página inicial com apresentação do Kanté
 2. **Sobre (/sobre)** - Biografia detalhada e percurso profissional
 3. **Serviços (/servicos)** - 6 áreas de prática jurídica
 4. **Carreira (/carreira)** - Oportunidades de emprego
@@ -128,13 +128,13 @@ apps/site/
 ## 📱 Páginas Detalhadas
 
 ### Home
-- Hero section com apresentação do Dr. Kanté
+- Hero section com apresentação do Kanté
 - Faixa de especialidades jurídicas
 - Seção sobre o profissional com educação e conquistas
-- Estatísticas da firma (15+ anos, 500+ casos, 3 cargos de liderança)
+- Estatísticas da firma (10+ anos, 100+ casos, 3 cargos de liderança)
 
 ### Sobre
-- Biografia completa do Dr. Ibraimo Kanté
+- Biografia completa do Ibraimo Kanté
 - Timeline do percurso profissional
 - Especializações e áreas de expertise
 - Valores da firma com ícones

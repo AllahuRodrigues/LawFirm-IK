@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const pillars = [
   {
@@ -46,29 +47,6 @@ const expertise = [
   "Assessoria Corporativa"
 ]
 
-const partners = [
-  {
-    name: "Ordem dos Advogados de Moçambique",
-    logo: "/images/partner.jpeg"
-  },
-  {
-    name: "CACM - Centro de Arbitragem",
-    logo: "/images/partner.jpeg"
-  },
-  {
-    name: "AMEEM - Associação de Empresários",
-    logo: "/images/partner.jpeg"
-  },
-  {
-    name: "Universidade Eduardo Mondlane",
-    logo: "/images/partner.jpeg"
-  },
-  {
-    name: "Zaheer Lorgat Advogados",
-    logo: "/images/partner.jpeg"
-  }
-]
-
 const patronProfile = {
   name: "Ibraimo Kanté",
   age: 41,
@@ -112,14 +90,14 @@ export default function HomePage() {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Dr. Ibraimo Kanté
+                Ibraimo Kanté
                 <span className="block text-accent text-2xl md:text-3xl font-medium mt-2">
-                  Advocacia de Excelência
+                  Profissionalismo e comprometimento
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl mb-4 text-primary-foreground/90">
-                15+ Anos Defendendo os Seus Direitos
+                10+ Anos Defendendo os Seus Direitos
               </p>
               
               <p className="text-lg mb-8 text-primary-foreground/80 max-w-lg">
@@ -138,7 +116,7 @@ export default function HomePage() {
                   href="/sobre"
                   className="border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-all duration-300"
                 >
-                  Conhecer o Dr. Kanté
+                  Conhecer o Kanté
                 </Link>
               </div>
             </div>
@@ -152,7 +130,7 @@ export default function HomePage() {
                 <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-accent/50 shadow-2xl">
                   <Image
                     src="/images/ceo1.jpg"
-                    alt="Dr. Ibraimo Kanté"
+                    alt="Ibraimo Kanté"
                     width={320}
                     height={320}
                     className="w-full h-full object-cover"
@@ -166,7 +144,7 @@ export default function HomePage() {
                 
                 {/* Achievement Badge */}
                 <div className="absolute -bottom-6 -right-6 bg-white text-primary px-4 py-2 rounded-full shadow-lg">
-                  <div className="text-sm font-semibold">15+</div>
+                  <div className="text-sm font-semibold">10+</div>
                   <div className="text-xs">Anos</div>
                 </div>
               </div>
@@ -189,7 +167,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Dr. Kanté */}
+      {/* About Kanté */}
       <section className="py-20 bg-white relative">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -201,7 +179,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
-                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Sobre o Dr. Kanté</span>
+                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Sobre o Kanté</span>
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
@@ -209,7 +187,7 @@ export default function HomePage() {
               </h2>
               
               <p className="text-gray-600 mb-6 leading-relaxed">
-                O Dr. Ibraimo Kanté é o Managing Partner da I.K Advogados, com uma carreira distinta 
+                O Ibraimo Kanté é o Managing Partner da I.K Advogados, com uma carreira distinta 
                 que começou em 2009. Formado pela prestigiada Universidade Eduardo Mondlane, 
                 especializado em Direito Civil, Comercial, Laboral e Bancário.
               </p>
@@ -222,7 +200,7 @@ export default function HomePage() {
 
               <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-4 rounded-lg border-l-4 border-primary mb-6">
                 <p className="text-sm text-gray-600 italic">
-                  <strong>Referência Oficial:</strong> O perfil do Dr. Ibraimo Kanté está disponível na página oficial da 
+                  <strong>Referência Oficial:</strong> O perfil do Ibraimo Kanté está disponível na página oficial da 
                   Ordem dos Advogados de Moçambique em{' '}
                   <a 
                     href="https://oam.org.mz/orgaos/conselho-nacional/" 
@@ -311,42 +289,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Nossos Parceiros e Associações
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Colaboramos com as principais instituições jurídicas e organizações de Moçambique.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="flex animate-scroll-horizontal gap-12 px-8">
-              {[...partners, ...partners].map((partner, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-56 h-28 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center group hover:shadow-md transition-all duration-300 px-6"
-                >
-                  <div className="relative w-full h-16 overflow-hidden rounded-lg">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={200}
-                      height={64}
-                      className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Legal Column Section */}
+      {/* Legal Articles & National Events Combined Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative">
         <div className="absolute inset-0 bg-pattern-dots opacity-30"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -354,219 +297,175 @@ export default function HomePage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
               <span className="text-accent font-medium text-sm uppercase tracking-wider">
-                Coluna Jurídica
+                Contribuições Jurídicas & Liderança
               </span>
               <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Artigos e Análises Jurídicas
+              Artigos Jurídicos & Participação em Eventos Nacionais
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Acompanhe as análises especializadas do Dr. Ibraimo Kanté sobre temas jurídicos relevantes.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Acompanhe as análises especializadas do Dr. Ibraimo Kanté e a sua participação activa em eventos da Ordem dos Advogados de Moçambique.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Article Image */}
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/image.png"
-                  alt="Coluna Jurídica - Folha Imobiliária"
-                  width={600}
-                  height={800}
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
-                  <p className="text-sm font-semibold text-primary">Folha Imobiliária</p>
-                  <p className="text-xs text-gray-600">Setembro 2024</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Artigos Jurídicos Card */}
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <span className="text-primary font-semibold uppercase text-xs tracking-wider">Artigo Destacado</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Article Content */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <span className="text-primary font-semibold uppercase text-sm tracking-wider">Artigo Destacado</span>
-              </div>
-
-              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                Finalidade da Caução nos Contratos de Arrendamento
-              </h3>
-
-              <div className="prose prose-gray max-w-none">
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  O contrato de arrendamento é aquele através do qual alguém se compromete a proporcionar a outro, o gozo (uso) temporário de um bem imóvel, mediante retribuição. A pessoa que dá o imóvel de arrendamento é designada por &ldquo;senhorio&rdquo; ou locador.
+                <CardTitle className="text-xl font-bold text-primary">
+                  Finalidade da Caução nos Contratos de Arrendamento
+                </CardTitle>
+                <CardDescription>
+                  Publicado na Folha Imobiliária • Setembro 2024
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  O contrato de arrendamento é aquele através do qual alguém se compromete a proporcionar a outro, 
+                  o gozo (uso) temporário de um bem imóvel, mediante retribuição. A pessoa que dá o imóvel de 
+                  arrendamento é designada por &ldquo;senhorio&rdquo; ou locador.
                 </p>
 
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  A pessoa que o imóvel é arrendado é designada por &ldquo;inquilino&rdquo; ou &ldquo;locatário&rdquo;. A retribuição corresponde do preço ou renda (e sendo não é obrigatório), nos contratos de arrendamento, o locatário obrigar-se a fazer um adiantamento de rendas, a título de caução.
-                </p>
-
-                <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg mb-6">
-                  <h4 className="font-semibold text-primary mb-2">Pontos-chave do Artigo:</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                <div className="bg-accent/10 border-l-4 border-accent p-4 rounded-r-lg">
+                  <h4 className="font-semibold text-primary mb-2 text-sm">Pontos-chave do Artigo:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-xs text-gray-700">
+                      <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <span>Definição e aplicação da caução em contratos de arrendamento</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <li className="flex items-start gap-2 text-xs text-gray-700">
+                      <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <span>Proteção jurídica para senhorios e inquilinos</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <li className="flex items-start gap-2 text-xs text-gray-700">
+                      <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <span>Resolução de conflitos em situações de incumprimento</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <li className="flex items-start gap-2 text-xs text-gray-700">
+                      <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                       <span>Casos práticos e exemplos de aplicação</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-lg">
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/ceo1.jpg"
-                      alt="Dr. Ibraimo Kanté"
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-primary font-bold text-xs">IK</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-primary">Dr. Ibraimo Kanté</p>
-                    <p className="text-sm text-gray-600">Advogado | ibrakante@ikadvogados.co.mz</p>
+                    <p className="font-semibold text-primary text-sm">Dr. Ibraimo Kanté</p>
+                    <p className="text-xs text-gray-600">ibrakante@ikadvogados.co.mz</p>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-8">
                 <Link
                   href="/servicos"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
                 >
                   <span>Saber Mais sobre Direito Imobiliário</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              </CardContent>
+            </Card>
 
-      {/* National Participation Section */}
-      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-blue-900"></div>
-        <div className="absolute inset-0 bg-pattern-grid opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Participação em Eventos Nacionais
-            </h2>
-            <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-              Presença ativa do Dr. Ibraimo Kanté em eventos da Ordem dos Advogados de Moçambique e outras instituições.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <span className="text-accent font-semibold uppercase text-sm tracking-wider">Liderança Nacional</span>
-              </div>
-
-              <h3 className="text-2xl md:text-3xl font-bold mb-6">
-                Moderador em Eventos da OAM
-              </h3>
-
-              <p className="text-primary-foreground/90 mb-6 leading-relaxed">
-                Como Conselheiro Nacional da Ordem dos Advogados de Moçambique, o Dr. Ibraimo Kanté 
-                participa regularmente como moderador em palestras e eventos sobre desenvolvimento 
-                profissional, formação de estagiários e questões relacionadas ao Instituto de Acesso à Justiça.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Comissão de Género - OAM</h4>
-                    <p className="text-sm text-primary-foreground/80">
-                      Ciclo de Palestras sobre Desenvolvimento Pessoal e Empreendedorismo
-                    </p>
+            {/* Eventos Nacionais Card */}
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
                   </div>
+                  <span className="text-accent font-semibold uppercase text-xs tracking-wider">Liderança Nacional</span>
                 </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Tema: Desafios e Prerrogativas dos Advogados</h4>
-                    <p className="text-sm text-primary-foreground/80">
-                      Uma Perspectiva Baseada no Género
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Moderação de Painéis</h4>
-                    <p className="text-sm text-primary-foreground/80">
-                      Dr. Dário de Souza, Dra. Amina Berta, Dr. Joaquim Pereira
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 p-4 bg-accent/10 rounded-lg border border-accent/20">
-                <p className="text-sm text-primary-foreground/90 italic">
-                  &ldquo;Por uma Advocacia Ética, de Qualidade e Moderna, ao Serviço da Sociedade&rdquo;
+                <CardTitle className="text-xl font-bold text-primary">
+                  Moderador em Eventos da OAM
+                </CardTitle>
+                <CardDescription>
+                  Conselheiro Nacional da Ordem dos Advogados de Moçambique
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Como Conselheiro Nacional da Ordem dos Advogados de Moçambique, o Dr. Ibraimo Kanté 
+                  participa regularmente como moderador em palestras e eventos sobre desenvolvimento 
+                  profissional, formação de estagiários e questões relacionadas ao Instituto de Acesso à Justiça.
                 </p>
-                <p className="text-xs text-accent mt-2">— Lema da Ordem dos Advogados de Moçambique</p>
-              </div>
-            </div>
 
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/image.png"
-                  alt="Dr. Ibraimo Kanté em evento da OAM"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                    <h4 className="font-semibold text-primary mb-2">Evento Nacional OAM</h4>
-                    <p className="text-sm text-gray-600">Dr. Ibraimo Kanté como moderador</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <span className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded">Março 2024</span>
-                      <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded">Hotel Sena</span>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-primary">Comissão de Género - OAM</h4>
+                      <p className="text-xs text-gray-600">
+                        Ciclo de Palestras sobre Desenvolvimento Pessoal e Empreendedorismo
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-primary">Tema: Desafios e Prerrogativas dos Advogados</h4>
+                      <p className="text-xs text-gray-600">
+                        Uma Perspectiva Baseada no Género
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-primary">Moderação de Painéis</h4>
+                      <p className="text-xs text-gray-600">
+                        Dr. Dário de Souza, Dra. Amina Berta, Dr. Joaquim Pereira
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              {/* Floating achievement badges */}
-              <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground p-3 rounded-full shadow-lg">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
+
+                <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+                  <p className="text-xs text-gray-700 italic">
+                    &ldquo;Por uma Advocacia Ética, de Qualidade e Moderna, ao Serviço da Sociedade&rdquo;
+                  </p>
+                  <p className="text-xs text-accent mt-1 font-medium">— Lema da Ordem dos Advogados de Moçambique</p>
+                </div>
+
+                <div className="bg-primary/5 p-3 rounded-lg">
+                  <h5 className="font-semibold text-primary text-sm mb-2">Informações do Evento Recente:</h5>
+                  <div className="space-y-1">
+                    <p className="text-xs text-gray-600"><strong>Local:</strong> Hotel Sena, Maputo</p>
+                    <p className="text-xs text-gray-600"><strong>Data:</strong> Março 2024</p>
+                    <p className="text-xs text-gray-600"><strong>Função:</strong> Moderador Principal</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Additional Information Section */}
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-xl border border-primary/10">
+              <p className="text-sm text-gray-600 mb-4">
+                <strong>Referência Oficial:</strong> As fotografias do Dr. Ibraimo Kanté em eventos oficiais da OAM 
+                podem ser consultadas na página oficial da organização, demonstrando a sua participação activa 
+                na liderança da advocacia moçambicana.
+              </p>
+              <p className="text-xs text-gray-500">
+                Para mais informações sobre eventos e artigos, visite a página oficial da Ordem dos Advogados de Moçambique.
+              </p>
             </div>
           </div>
         </div>
@@ -588,11 +487,11 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div className="group">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">10+</div>
               <div className="text-primary-foreground/80">Anos de Experiência</div>
             </div>
             <div className="group">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">100+</div>
               <div className="text-primary-foreground/80">Casos Resolvidos</div>
             </div>
             <div className="group">
@@ -673,32 +572,6 @@ export default function HomePage() {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* National Participation Section */}
-      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-blue-900"></div>
-        <div className="absolute inset-0 bg-pattern-grid opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Participação em Eventos da Ordem dos Advogados de Moçambique
-            </h2>
-            
-            <p className="text-primary-foreground/90 mb-6 leading-relaxed">
-              Como Conselheiro Nacional da Ordem dos Advogados de Moçambique, o Dr. Ibraimo Kanté 
-              participa regularmente como moderador em palestras e eventos sobre desenvolvimento 
-              profissional, formação de estagiários e questões relacionadas ao Instituto de Acesso à Justiça.
-            </p>
-            
-            <div className="bg-primary-foreground/10 p-6 rounded-xl backdrop-blur-sm">
-              <p className="text-primary-foreground/90 text-sm">
-                As fotografias do Dr. Kanté em eventos oficiais da OAM podem ser consultadas na página oficial da 
-                organização, demonstrando a sua participação ativa na liderança da advocacia moçambicana.
-              </p>
             </div>
           </div>
         </div>

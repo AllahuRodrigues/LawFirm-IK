@@ -253,7 +253,7 @@ Por favor confirme este agendamento contactando o cliente através dos dados for
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Agende a Sua Consulta
               <span className="block text-accent text-2xl md:text-3xl font-medium mt-2">
-                Com o Dr. Ibraimo Kanté
+                Com o Ibraimo Kanté
               </span>
             </h1>
             

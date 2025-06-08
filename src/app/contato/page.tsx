@@ -146,7 +146,7 @@ Data: ${new Date().toLocaleString('pt-PT')}
               </div>
               <div className="w-px h-12 bg-primary-foreground/30"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-accent">15+</div>
+                <div className="text-2xl font-bold text-accent">10+</div>
                 <div className="text-sm">Anos Experiência</div>
               </div>
             </div>

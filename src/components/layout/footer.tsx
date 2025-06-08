@@ -29,18 +29,18 @@ export function Footer() {
             </div>
             
             <p className="text-sm text-primary-foreground/80 max-w-md leading-relaxed">
-              Advocacia de excelência com mais de 15 anos de experiência em Moçambique. 
-              Especialistas em direito comercial, laboral e arbitragem.
+            Profissionalismo e comprometimento com mais de 10 anos de experiência em Moçambique. 
+              Com areas de actuação em direito comercial, administrativo, bancario, laboral e arbitragem.
             </p>
             
             <div className="flex items-center gap-6 text-primary-foreground/80">
               <div className="text-center">
-                <div className="text-xl font-bold text-accent">15+</div>
+                <div className="text-xl font-bold text-accent">10+</div>
                 <div className="text-xs">Anos</div>
               </div>
               <div className="w-px h-8 bg-primary-foreground/30"></div>
               <div className="text-center">
-                <div className="text-xl font-bold text-accent">500+</div>
+                <div className="text-xl font-bold text-accent">100+</div>
                 <div className="text-xs">Casos</div>
               </div>
               <div className="w-px h-8 bg-primary-foreground/30"></div>

@@ -13,7 +13,7 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16">
                 <Image
-                  src="/images/logo-white.png"
+                  src="/images/logo-main.png"
                   alt="I.K Advogados Logo"
                   width={64}
                   height={64}

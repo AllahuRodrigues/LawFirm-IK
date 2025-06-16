@@ -97,7 +97,7 @@ export default function HomePage() {
               </h1>
               
               <p className="text-xl md:text-2xl mb-4 text-primary-foreground/90">
-                10+ Anos Defendendo os Seus Direitos
+                10+ Anos comprometido com a defesa dos seus clientes
               </p>
               
               <p className="text-lg mb-8 text-primary-foreground/80 max-w-lg">
@@ -116,7 +116,7 @@ export default function HomePage() {
                   href="/sobre"
                   className="border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-all duration-300"
                 >
-                  Conhecer o Kanté
+                  Conheça o Ibraimo Kanté
                 </Link>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function HomePage() {
                 {/* CEO Photo */}
                 <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-accent/50 shadow-2xl">
                   <Image
-                    src="/images/ceo1.jpg"
+                    src="/images/circle-profile.jpg"
                     alt="Ibraimo Kanté"
                     width={320}
                     height={320}
@@ -187,7 +187,7 @@ export default function HomePage() {
               </h2>
               
               <p className="text-gray-600 mb-6 leading-relaxed">
-                O Ibraimo Kanté é o Managing Partner da I.K Advogados, com uma carreira distinta 
+                O Ibraimo Kanté é o Sócio-fundador e Administrador da I.K Advogados, com uma carreira distinta 
                 que começou em 2009. Formado pela prestigiada Universidade Eduardo Mondlane, 
                 especializado em Direito Civil, Comercial, Laboral e Bancário.
               </p>

@@ -189,14 +189,16 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="relative w-full max-w-md mx-auto">
                   <div className="aspect-square rounded-2xl overflow-hidden border-4 border-accent/20 shadow-2xl bg-gradient-to-br from-primary/5 to-accent/5">
-                    <Image
-                      src="/images/ceo1.jpg"
-                      alt="Ibraimo Kanté"
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                      priority
-                    />
+         
+  <Image
+    src="/images/new-main-profile.jpg"
+    alt="Ibraimo Kanté"
+    width={800}
+    height={1000}
+    className="w-full h-auto object-contain rounded-xl shadow-lg"
+  />
+
+
                   </div>
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg border border-gray-200">
                     <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
@@ -209,7 +211,7 @@ export default function AboutPage() {
               </div>
 
               <div className="bg-gradient-to-br from-accent/5 to-primary/5 p-8 rounded-xl border border-accent/20">
-                <h3 className="text-2xl font-semibold text-primary mb-6">Especializações</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-6">Áreas de actuação</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {expertise.map((area, index) => (
                     <div key={index} className="flex items-center gap-3">
@@ -346,7 +348,7 @@ export default function AboutPage() {
             Pronto para Trabalhar Connosco?
           </h2>
           <p className="text-lg mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            Beneficie da nossa experiência e dedicação. Agende uma consulta e descubra como podemos ajudá-lo a alcançar os seus objetivos jurídicos.
+            Beneficie da nossa experiência e dedicação. Agende uma consulta e descubra como podemos ajudá-los na defesa dos seus direitos.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     description: "Escritório de advocacia especializado em Direito Civil, Comercial, Laboral e Imobiliário em Maputo, Moçambique. Serviços jurídicos de excelência.",
     images: [
       {
-        url: "/images/logo-white.png",
+        url: "/images/logo-main.png",
         width: 1200,
         height: 630,
         alt: "I.K Advogados - Escritório de Advocacia em Maputo"
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "I.K Advogados - Escritório de Advocacia em Maputo",
     description: "Serviços jurídicos especializados em Moçambique. Direito Civil, Comercial, Laboral e Imobiliário.",
-    images: ["/images/logo-white.png"]
+    images: ["/images/logo-main.png"]
   },
   
   // Robots
@@ -155,8 +155,8 @@ export default function RootLayout({
               "name": "I.K Advogados",
               "description": "Escritório de advocacia especializado em Direito Civil, Comercial, Laboral e Imobiliário em Maputo, Moçambique",
               "url": "https://ikadvogados.co.mz",
-              "logo": "https://ikadvogados.co.mz/images/logo-white.png",
-              "image": "https://ikadvogados.co.mz/images/logo-white.png",
+              "logo": "https://ikadvogados.co.mz/images/logo-main.png",
+              "image": "https://ikadvogados.co.mz/images/logo-main.png",
               "telephone": "+258-845775185",
               "email": "ibrakante@ikadvogados.co.mz",
               "address": {

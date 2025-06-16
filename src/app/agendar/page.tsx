@@ -9,27 +9,24 @@ const consultationTypes = [
     title: 'Consulta Presencial',
     description: 'Reunião no nosso escritório em Sommerschield',
     duration: '60 minutos',
-    price: 'Consulta inicial gratuita',
     icon: '🏢',
-    features: ['Análise detalhada do caso', 'Documentação física', 'Ambiente profissional']
+    features: ['Análise detalhada do caso', 'Documentação física', 'Ambiente profissional', 'Resposta em até 72 horas']
   },
   {
     id: 'online',
     title: 'Consulta Online',
     description: 'Videochamada através de plataforma segura',
-    duration: '45 minutos', 
-    price: 'Consulta inicial gratuita',
+    duration: '60 minutos', 
     icon: '💻',
-    features: ['Conveniência total', 'Gravação autorizada', 'Partilha de documentos']
+    features: ['Conveniência total', 'Partilha de documentos', 'Resposta em até 72 horas']
   },
   {
     id: 'urgente',
     title: 'Consulta Urgente',
     description: 'Atendimento prioritário em até 24h',
-    duration: '30-60 minutos',
-    price: 'Taxa expressa aplicável',
+    duration: '60 minutos',
     icon: '⚡',
-    features: ['Resposta rápida', 'Prioridade máxima', 'Horários flexíveis']
+    features: ['Resposta rápida', 'Prioridade máxima', 'Horários flexíveis', 'Atendimento em menos de 24 horas']
   }
 ]
 
@@ -266,11 +263,7 @@ Por favor confirme este agendamento contactando o cliente através dos dados for
                 <div className="text-2xl font-bold text-accent">24h</div>
                 <div className="text-sm">Confirmação</div>
               </div>
-              <div className="w-px h-12 bg-primary-foreground/30"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-accent">Gratuita</div>
-                <div className="text-sm">1ª Consulta</div>
-              </div>
+            
               <div className="w-px h-12 bg-primary-foreground/30"></div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-accent">Online</div>
@@ -290,6 +283,10 @@ Por favor confirme este agendamento contactando o cliente através dos dados for
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Escolha a modalidade que melhor se adapta às suas necessidades e disponibilidade.
+            </p>
+            <p className="text-sm text-gray-500 mt-4 italic">
+              * As consultas são cobradas de acordo com a complexidade do caso e modalidade escolhida. 
+              Valor a ser acordado após análise inicial do seu caso.
             </p>
           </div>
 
@@ -318,7 +315,6 @@ Por favor confirme este agendamento contactando o cliente através dos dados for
                     <span className="text-gray-500">Duração:</span> {type.duration}
                   </p>
                   <p className="font-medium text-accent">
-                    <span className="text-gray-500">Preço:</span> {type.price}
                   </p>
                 </div>
                 <ul className="mt-4 space-y-1">
